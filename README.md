@@ -11,7 +11,7 @@ After practicing for a bit, it will keep track of your progress and display a si
 * pip install requests
 * pip install pandas
 * pip install matplotlib
-## If using git you already know what to do, if not simply click the green clone or download button and choose zip
+## If using git you already know what to do, if not simply click the green clone or download button above and choose zip
 * Unzip the files into an appropriate location
 * Back in the command prompt, navigate to that location
 * type: python MySpanishHelper.py
