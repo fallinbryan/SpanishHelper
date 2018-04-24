@@ -4,6 +4,35 @@ from matplotlib import pyplot as plt
 plt.style.use('seaborn-notebook')
 
 
+def compareWords(word1, word2):
+    simscore = 0.0
+    if word1 == word2:
+        simscore = 1.0
+    elif len(word1) == len(word2):
+        tScore = 0.0
+        for i, c in enumerate(word1):
+            if c == word2[i]:
+                tScore += 1.0
+        simscore = tScore / len(word1)
+    else:
+        longestWordLen = 0
+        if len(word1) > longestWordLen:
+            longestWordLen = len(word1)
+            longWord = word1
+            shortWord = word2
+        if len(word2) > longestWordLen:
+            longestWordLen = len(word2)
+            longWord = word2
+            shortWord = word1
+        tScore = 0.0
+        for c in shortWord:
+            if c in longWord:
+                tScore += 1
+        simscore = len(shortWord) / len(longWord)
+        simscore *= tScore / longestWordLen
+
+    return simscore
+
 def isInt(string):
     try:
         i = int(string)
@@ -260,10 +289,15 @@ def entryMode():
             response = input(': ANSWER HERE >')
             tries -= 1
         elif isInt(response):
+
             print('Invalid code')
         else:
-            print('Sorry, the correct answer is {}'.format(answer))
-
+            simscore = compareWords(response, answer)
+            print('That is incorrect, your answer is {0:.2f}% similar to the correct answer'.format(simscore*100))
+            print('The correct answer is {}'.format(answer))
+            if simscore > 0.7:
+                print('You were close enough to apply some partial credit to your total score')
+                number_correct += simscore
 
     tries -= 1
     if tries > 0:
