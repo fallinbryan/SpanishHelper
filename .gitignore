@@ -1,0 +1,4 @@
+*.pickle
+venv/
+.idea/
+.ipynb_checkpoints/
