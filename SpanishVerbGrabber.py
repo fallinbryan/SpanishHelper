@@ -5,6 +5,7 @@
 import requests
 from bs4 import BeautifulSoup as soup
 import pickle
+
 verbListClient = None
 verbListURLS = [ 'https://www.linguasorb.com/spanish/verbs/most-common-verbs/',
                  'https://www.linguasorb.com/spanish/verbs/most-common-verbs/2',
