@@ -274,6 +274,13 @@ def entryMode():
 
         response = input(': ANSWER HERE >')
 
+        if isInt(response) and int(response) == 99:
+            english = verbs_df.English.values[verbMap[random_verb]]
+            regularity = verbs_df.Regular.values[verbMap[random_verb]]
+            print('{} is {} verb.'.format(random_verb, regularity))
+            print('English translations: {}'.format(english))
+            response = input(': ANSWER HERE >')
+
         if response == answer:
             print('Well Done')
             number_correct += 1
@@ -281,13 +288,8 @@ def entryMode():
         elif isInt(response) and int(response) == -1:
             response_key = int(response)
 
-        elif isInt(response) and int(response) == 99:
-            english = verbs_df.English.values[verbMap[random_verb]]
-            regularity = verbs_df.Regular.values[verbMap[random_verb]]
-            print('{} is {} verb.'.format(random_verb, regularity))
-            print('English translations: {}'.format(english))
-            response = input(': ANSWER HERE >')
-            tries -= 1
+
+
         elif isInt(response):
 
             print('Invalid code')
