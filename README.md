@@ -4,7 +4,7 @@
 After practicing for a bit, it will keep track of your progress and display a simple graph. </p>
 
 ## Installation Instructions:
-* Download and install Python 3 (be sure to check the box to include python in your path)
+* Download and [Install Python3](https://www.python.org/ftp/python/3.6.5/python-3.6.5.exe) (be sure to check the box to include python in your path)
 * Open your command prompt by type cmd in the search bar
 ## Type the follwing Commands:
 * pip install bs4
