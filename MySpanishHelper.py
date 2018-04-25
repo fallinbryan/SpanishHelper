@@ -1,9 +1,10 @@
 import pickle
 import random
+import time
 from matplotlib import pyplot as plt
 plt.style.use('seaborn-notebook')
 
-
+random.seed(time.clock())
 def compareWords(word1, word2):
     simscore = 0.0
     if word1 == word2:
